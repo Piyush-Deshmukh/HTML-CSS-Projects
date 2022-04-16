@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #49befe;
+}
+
+.main {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  animation: yAxis 5s infinite cubic-bezier(.79,-0.02,.39,1.53);  
+  transform: translateY(-200px);
+}
+
+.bee {
+  position: absolute;
+  top: 40%;
+  height: 100px;
+  width: 270px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50px;
+  animation: xAxis 12s infinite ease-in-out;
+  transform: translateX(-450px);
+}
+
+@keyframes yAxis {
+  50% {
+    transform: translateY(200px);
+  }
+}
+
+@keyframes xAxis {
+  50% {
+    transform: translateX(450px);
+  }
+}
+
+.bee::before {
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 140px;
+  background: linear-gradient(
+    #ffec02 70%,
+    #202020 70%,
+    #202020 75%,
+    #ffec20 75%,
+    #ffec02 80%,
+    #202020 80%,
+    #202020 85%,
+    #ffec20 85%,
+    #ffec02 90%,
+    #202020 90%,
+    #202020 95%,
+    #ffec20 95%
+  );
+  border-radius: 70px;
+  left: 65px;
+  top: -55px;
+}
+
+
+.eye,
+.eye::before {
+  position: absolute;
+  height: 13.5px;
+  width: 25px;
+  border: 7px solid #202020;
+  border-radius: 20px 20px 0 0;
+  bottom: 95px;
+  border-bottom: none;
+}
+
+.eye {
+  left: 94px;
+}
+
+.eye::before {
+  content: "";
+  bottom: 0;
+  left: 42px;
+}
+
+.antenna,
+.antenna::before {
+  position: absolute;
+  height: 50px;
+  width: 8px;
+  background-color: #202020;
+}
+
+.antenna {
+  left: 164px;
+  bottom: 130px;
+  z-index: -1;
+  rotate: 25deg;
+}
+
+.antenna::before {
+  content: "";
+  right: 55px;
+  top: 25px;
+  rotate: -50deg;
+}
+
+.antenna::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: #202020;
+  border-radius: 50%;
+  left: -6px;
+  bottom: 40px;
+  box-shadow: -72px 35px #202020;
+}
+
+.mouth {
+  position: absolute;
+  height: 40px;
+  width: 80px;
+  background: radial-gradient(circle at 50% 100%, #ff90a3 15px, #202020 16px);
+  top: 20px;
+  left: 97px;
+  border-radius: 0 0 40px 40px;
+}
+
+.mouth::before {
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 50px;
+  background-color: white;
+  left: 15px;
+}
