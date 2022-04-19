@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#cartoon {
+  --line: #222;
+  --skin: #fca;
+  --iris: #69c;
+  --shadow: #5002;
+  height: 80vmin;
+  width: 80vmin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#cartoon div,
+#cartoon div.after,
+#cartoon div.before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.neck {
+  width: 20%;
+  height: 20%;
+  background: var(--skin);
+  background-image: radial-gradient(
+    circle at 50% -20%,
+    var(--shadow) 65%,
+    #0000 0
+  );
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%);
+  border: 0.5vmin solid;
+  border-bottom: 0;
+  clip-path: polygon(0 0, 0 100%, 100% 95%, 100% 0);
+}
+
+.face {
+  height: 60%;
+  width: 45%;
+  background: var(--skin);
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 100% / 60% 50% 120% 120%;
+  border: 0.5vmin solid;
+  border-bottom-width: 0.85vmin;
+  border-top-width: 0.33vmin;
+}
+
+.mouth {
+  height: 12%;
+  width: 50%;
+  border-radius: 100%;
+  box-shadow: -0.5vmin 1.4vmin 0 -1vmin;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(5deg);
+}
+
+.ear {
+  height: 25%;
+  width: 15%;
+  background: var(--skin);
+  top: 42%;
+  left: 20%;
+  border: 0.5vmin solid;
+  border-radius: 100% / 50% 50% 20% 120%;
+  transform: rotate(-15deg);
+  box-shadow: -0.125vmin -0.25vmin;
+}
+
+.ear::before {
+  content: "";
+  display: block;
+  width: 5vmin;
+  height: 5vmin;
+  border: 0.5vmin solid;
+  border-left-width: 0.85vmin;
+  border-radius: 50%;
+  top: 47%;
+  left: 38%;
+  position: absolute;
+}
+
+.ear::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 70%;
+  border: 0.5vmin solid;
+  border-left: 0.25vmin solid var(--skin);
+  border-radius: 70%;
+  top: 15%;
+  left: 10%;
+  position: absolute;
+  transform: rotate(-5deg);
+  box-shadow: inset -6vmin 1vmin var(--shadow);
+}
+
+.ear + .ear {
+  left: auto;
+  right: 21%;
+  transform: scaleX(-1) rotate(-16.5deg);
+}
+
+.ear + .ear::before {
+  left: 33%;
+}
+
+.eye {
+  height: 25%;
+  width: 25%;
+  background: white;
+  border: 0.5vmin solid;
+  top: 30%;
+  left: 15%;
+  border-radius: 100% / 100% 60% 10% 15%;
+  border-right-width: 0.33vmin;
+  overflow: hidden;
+  transform: rotate(-4deg);
+  box-shadow: 0 -0.125vmin, 0 -2vmin 0 1vmin var(--skin),
+    -0.25vmin -5.5vmin 0 -0.5vmin;
+}
+
+.eye + .eye {
+  left: auto;
+  right: 12%;
+  transform: scaleX(-1) rotate(-4deg);
+}
+
+.pupil {
+  height: 7vmin;
+  width: 7vmin;
+  background: var(--iris);
+  border-radius: 50%;
+  top: 40%;
+  left: 18%;
+  background-image: radial-gradient(circle at 30% 32%, #ffff 7%, #0000 0),
+    radial-gradient(circle at 40% 27%, #ffff 4%, #0000 0),
+    radial-gradient(var(--line) 35%, #0000 0);
+  border: 0.33vmin solid;
+}
+
+.eye + .eye .pupil {
+  transform: scaleX(-1);
+}
+
+.nose {
+  height: 12%;
+  width: 20%;
+  border-radius: 50%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-shadow: 0.5vmin -0.5vmin;
+}
+
+.body {
+  background: white;
+  width: 80%;
+  height: 40%;
+  border-radius: 100% / 75% 80%;
+  top: 87%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-shadow: 0 -0.5vmin 0 0.125vmin, inset 0 0.5vmin var(--shadow);
+  background-image: radial-gradient(
+    circle at 50% -20%,
+    var(--skin) 27%,
+    var(--line) 0 28%,
+    transparent 0
+  );
+}
+
+.side-hair {
+  border-color: #410;
+  background: #630;
+  width: 7.5%;
+  height: 22%;
+  top: 20%;
+  left: 69%;
+  border-radius: 100% 120% 160% 0;
+  transform: rotate(-10deg);
+  z-index: 1;
+}
+
+.small {
+  width: 20%;
+  height: 40%;
+  top: 98%;
+  left: -6%;
+  transform: rotate(5deg);
+  border-radius: 12% 0 100% 0;
+  background-color: #630;
+}
+
+
+.side-hair + .side-hair {
+  left: auto;
+  right: 67%;
+  top: 21%;
+  border-bottom-left-radius: 50%;
+  transform: scaleX(-1) rotate(-10deg);
+}
+
+.side-hair + .side-hair .small {
+  left: auto;
+  right: 65%;
+  top: 90%;
+  width: 35%;
+  border-radius: 0 20% 50% 10%;
+  transform: scaleX(-1) rotate(-10deg);
+}
+
+.hair-top {
+  width: 44.2%;
+  height: 15%;
+  border-color: #410;
+  background: #630;
+  border-radius: 100% 100% 40% 70%;
+  transform: rotate(-4deg);
+  top: 11.5%;
+  left: 28%;
+}
+
+.hair-top::before {
+  content: '';
+  position: absolute;
+  width: 4.5vmin;
+  height: 4.5vmin;
+  border-radius: 100% 0%;
+  border: 0.5vmin solid #410;
+  background: #630;
+  bottom: -1.5vmin;
+  right: 1%;
+}
+
+.hair-top::after {
+  content: '';
+  position: absolute;
+  width: 4.5vmin;
+  height: 4.5vmin;
+  border-radius: 50%;
+  background: #630;
+  bottom: 2vmin;
+  right: -2%;
+}
