@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    position: absolute;
+    height: 420px;
+    width: 420px;
+    top: 30%;
+}
+
+.fan {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    left: 47%;
+    top: 30%;
+    border-radius: 50%;
+}
+
+.fan::before {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: rgb(190, 186, 186);
+    border: 8px solid black;
+    left: -34px;
+    top: -34px;
+    border-radius: 50%;
+}
+
+span {
+    position: absolute;
+    height: 120px;
+    width: 70px;
+    background-color: orange;
+    z-index: -1;
+    border-radius: 55% 45% 100% 0 / 39% 28% 72% 61%;
+}
+
+span:nth-child(1) {
+    bottom: 10px;
+    left: 10px;
+    border: 5px solid black;
+}
+
+span:nth-child(2) {
+    rotate: -120deg;
+    left: -95px;
+    top: -50px;
+    border: 5px solid black;
+}
+
+span:nth-child(3) {
+    rotate: -240deg;
+    right: -60px;
+    top: 10px;
+    border: 5px solid black;
+}
+
+.base {
+    position: absolute;
+    height: 160px;
+    width: 20px;
+    background-color: black;
+    left: 47%;
+    top: 35%;
+    z-index: -2;
+}
+
+.base::before {
+    content: '';
+    position: absolute;
+    height: 35px;
+    width: 150px;
+    background-color: orange;
+    left: -65px;
+    top: 160px;
+    border-radius: 20px 20px 0 0;
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+label {
+    position: absolute;
+    cursor: pointer;
+}
+
+#stop {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 12px;
+    background-color: red;
+    top: 70%;
+    left: 36%;
+}
+
+#stop:checked {
+    transform: scaleY(-0.7);
+}
+
+#stop:checked ~ .fan {
+    animation: stop 1s infinite linear;
+}
+
+@keyframes stop {
+    100% {
+        rotate: 0deg;
+    }
+}
+
+#low {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 12px;
+    background-color: red;
+    top: 70%;
+    left: 42%;
+}
+
+#low:checked {
+    transform: scaleY(-0.7);
+}
+
+#low:checked ~ .fan {
+    animation: slow 0.7s infinite linear;
+}
+
+@keyframes slow {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#medium {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 12px;
+    background-color: red;
+    top: 70%;
+    left: 54%;
+}
+
+#medium:checked {
+    transform: scaleY(-0.7);
+}
+
+#medium:checked ~ .fan {
+    animation: mdm 0.4s infinite linear;
+}
+
+@keyframes mdm {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#high {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 12px;
+    background-color: red;
+    top: 70%;
+    left: 60%;
+}
+
+#high:checked {
+    transform: scaleY(-0.7);
+}
+
+#high:checked ~ .fan {
+    animation: fast 0.2s infinite linear;
+}
+
+@keyframes fast {
+    100% {
+        transform: rotate(360deg);
+    }
+}
