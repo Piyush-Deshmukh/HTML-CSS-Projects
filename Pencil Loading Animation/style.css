@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.line {
+  position: absolute;
+  height: 1.5vmin;
+  width: 70vmin;
+  top: 70%;
+  left: 30%;
+  background-color: black;
+  border-radius: 2vmin;
+  animation: line 8s infinite linear;
+}
+
+@keyframes line {
+  0%,
+  90%,
+  100% {
+    width: 0;
+  }
+  50%,
+  60% {
+    width: 70vmin;
+  }
+}
+
+.pencil {
+  position: absolute;
+  height: 50.5vmin;
+  width: 11vmin;
+  top: 13%;
+  left: 36%;
+  border: 0.2vmin solid black;
+  background: linear-gradient(#ed3569 60%, #d2dfe8 60%) no-repeat,
+    linear-gradient(
+      to right,
+      #f26c37 33.33%,
+      #eb852c 33.33%,
+      #eb852c 66.66%,
+      #f19f22 66.66%
+      );
+  background-size: 100% 40%, 100% 60%;
+  background-position: 0 0, 0 100%;
+  border-radius: 2vmin 2vmin 0 0;
+  animation: pencil 8s infinite linear;
+}
+
+@keyframes pencil {
+  0% {
+    transform: translate(0, 0) rotate(30deg);
+  }
+  50% {
+    transform: translate(70vmin, 0) rotate(30deg);
+  }
+  55% {
+    transform: translate(70vmin, -1vmin) rotate(30deg);
+  }
+  60% {
+    transform: translate(64vmin, 9vmin) rotate(220deg);
+  }
+  88% {
+    transform: translate(0, 9vmin) rotate(220deg);
+  }
+  90% {
+    transform: translate(0, 9vmin) rotate(220deg);
+  }
+  97.8% {
+    transform: translate(0, 0) rotate(30deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(30deg);
+  }
+}
+
+.pencil::before {
+  content: '';
+  position: absolute;
+  height: 11vmin;
+  width: 11vmin;
+  background: linear-gradient(#f4c09b 70%, #0d2436 70%);
+  top: 100%;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
