@@ -1,0 +1,190 @@
+body {
+  background-color: yellow;
+}
+
+.cartoon {
+  width: 80vmin;
+  height: 80vmin;
+  /* background: #f002;
+  background-image: repeating-linear-gradient(#0000 0 9.5%, gray 10%),
+    repeating-linear-gradient(to left, #0000 0 9.5%, #0002 10%); */
+  position: absolute;
+  background-color: yellow;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.face-bg {
+  position: absolute;
+  height: 40vmin;
+  width: 50vmin;
+  border-radius: 30vmin 30vmin 5vmin 5vmin;
+  background-color: black;
+  top: 20%;
+  left: 20%;
+}
+
+.ear {
+  position: absolute;
+  height: 20vmin;
+  width: 20vmin;
+  border-radius: 50%;
+  background-color: black;
+  top: 10%;
+  left: 10%;
+}
+
+.ear + .ear {
+  left: auto;
+  right: 8%;
+}
+
+.oval1 {
+  position: absolute;
+  height: 40vmin;
+  width: 23vmin;
+  background-color: white;
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+}
+
+.oval1 + .oval1 {
+  left: auto;
+  right: 10%;
+}
+
+.oval2 {
+  position: absolute;
+  height: 35vmin;
+  width: 15vmin;
+  background-color: white;
+  border-radius: 50%;
+  top: 60%;
+  left: 15%;
+  transform: rotate(-60deg);
+  box-shadow: -0.3vmin 0 0 0 black;
+}
+
+.oval2 + .oval2 {
+  left: auto;
+  right: 15%;
+  transform: scaleX(-1) rotate(-60deg);
+}
+
+.eye {
+  position: absolute;
+  height: 15vmin;
+  width: 5vmin;
+  border-radius: 50%;
+  background-color: black;
+  top: 40%;
+  left: 38%;
+  z-index: 3;
+}
+
+.eye + .eye {
+  left: auto;
+  right: 38%;
+}
+
+.nose {
+  position: absolute;
+  height: 15vmin;
+  width: 6vmin;
+  border-radius: 50%;
+  background-color: white;
+  top: 65%;
+  left: 44%;
+  z-index: 3;
+  box-shadow: -0.5vmin 0 0 0 black;
+  transform: rotate(90deg);
+}
+
+.nose::before {
+  content: "";
+  position: absolute;
+  height: 13vmin;
+  width: 8.5vmin;
+  border-radius: 50%;
+  background-color: black;
+  top: 6%;
+  left: 15%;
+}
+
+.oval3 {
+  position: absolute;
+  top: 85%;
+  left: 32%;
+  width: 18vmin;
+  height: 20vmin;
+  border-radius: 100% / 20% 30% 50% 50%;
+  background-color: white;
+  box-shadow: 0 0.3vmin 0 0 black;
+}
+
+.lip {
+  position: absolute;
+  height: 22vmin;
+  width: 40vmin;
+  border-bottom: 1vmin solid black;
+  border-color: transparent transparent #000 transparent;
+  z-index: 3;
+  border-radius: 50%;
+  top: 55%;
+  left: 10%;
+}
+
+.line {
+  position: absolute;
+  width: 6vmin;
+  height: 3vmin;
+  border-top: 0.5vmin solid black;
+  z-index: 3;
+  top: 85%;
+  border-radius: 50%;
+}
+
+.line.left {
+  left: 5%;
+  transform: rotate(-30deg);
+}
+
+.line.right {
+  right: 5%;
+  transform: rotate(30deg);
+}
+
+.mouth {
+  position: absolute;
+  border-width: 0.5vmin 1vmin;
+  border-style: solid;
+  border-color: #000;
+  border-radius: 50%;
+  width: 12vmin;
+  height: 12vmin;
+  background-color: #000;
+  z-index: 2;
+  top: 96%;
+  left: 36%;
+}
+
+.cover {
+  position: absolute;
+  width: 15vmin;
+  height: 5.5vmin;
+  background-color: white;
+  left: -10%;
+}
+
+.tongue1 {
+  position: absolute;
+  width: 10vmin;
+  height: 5vmin;
+  background-color: #F00;
+  border-radius: 100% / 80% 80% 150% 150%;
+  z-index: 2;
+  top: 55%;
+  left: 10%;
+}
