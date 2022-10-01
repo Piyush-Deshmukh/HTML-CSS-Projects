@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #c011f0;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, .4);
+}
+
+.card .header {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    /* background: #d9d9d9; */
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.header .info {
+    margin-left: 20px;
+}
+
+.info span {
+    display: block;
+    position: relative;
+    /* background: #d9d9d9; */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.info .name {
+    height: 15px;
+    width: 100px;
+}
+
+.info .about {
+    height: 13px;
+    width: 150px;
+    margin-top: 10px;
+}
+
+.content {
+    margin: 25px 0;
+}
+
+.line {
+    height: 13px;
+    /* background: #d9d9d9; */
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.line-1 {
+    width: 85%;
+}
+
+.line-3 {
+    width: 60%;
+}
+
+.btn {
+    display: flex;
+    position: relative;
+    height: 45px;
+    width: 100px;
+    /* background: #d9d9d9; */
+    border-radius: 25px;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.logo, span, 
+.line, .btn {
+    background: linear-gradient(120deg, #d9d9d9 34%, #faf0f0 39%, #d9d9d9 44%);
+    background-size: 300% 200%;
+    background-position: 100% 0;
+    animation: skeleton 1.75s linear infinite reverse;
+}
+
+@keyframes skeleton {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
